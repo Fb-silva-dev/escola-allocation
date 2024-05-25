@@ -1,5 +1,6 @@
 package com.example.escolaallocation.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,9 +13,17 @@ public class Professores {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "name", nullable = false)
 	private String name;
+	
+	@Column(name = "sobrenome", nullable = false)
 	private String sobrenome;
+	
+	@Column(name = "matricula", nullable = false)
 	private int matricula;
+	
+	@Column(name = "cpf", nullable = false, unique = true)
 	private String cpf;
 
 	public Long getId() {
