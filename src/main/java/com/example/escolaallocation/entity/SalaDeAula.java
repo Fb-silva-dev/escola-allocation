@@ -1,5 +1,6 @@
 package com.example.escolaallocation.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,9 +13,17 @@ public class SalaDeAula {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "identificador", nullable = false)
 	private String identificador;
+	
+	@Column(name = "capacidade", nullable = false)
 	private int capacidade;
-	private String localização;
+	
+	@Column(name = "localizacao", nullable = false)
+	private String localizacao;
+	
+	@Column(name = "equipamentos", nullable = false)
 	private String equipamentos;
 
 	public Long getId() {
@@ -42,11 +51,11 @@ public class SalaDeAula {
 	}
 
 	public String getLocalização() {
-		return localização;
+		return localizacao;
 	}
 
 	public void setLocalização(String localização) {
-		this.localização = localização;
+		this.localizacao = localização;
 	}
 
 	public String getEquipamentos() {
@@ -60,7 +69,7 @@ public class SalaDeAula {
 	@Override
 	public String toString() {
 		return "SalaDeAula [id=" + id + ", identificador=" + identificador + ", capacidade=" + capacidade
-				+ ", localização=" + localização + ", equipamentos=" + equipamentos + "]";
+				+ ", localização=" + localizacao + ", equipamentos=" + equipamentos + "]";
 	}
 
 }

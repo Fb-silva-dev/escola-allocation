@@ -1,5 +1,6 @@
 package com.example.escolaallocation.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,9 +14,17 @@ public class Responsaveis {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "nome", nullable = false)
 	private String nome;
+	
+	@Column(name = "sobrenome", nullable = false)
 	private String sobrenome;
+	
+	@Column(name = "relacaoAluno", nullable = false)
 	private String relacaoAluno;
+	
+	@Column(name = "acompanhamentoTratamento", nullable = false)
 	private String acompanhamentoTratamento;
 
 	public Long getId() {

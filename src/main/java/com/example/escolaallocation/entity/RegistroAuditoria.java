@@ -1,6 +1,8 @@
 package com.example.escolaallocation.entity;
 
 import java.security.Timestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,8 +16,14 @@ public class RegistroAuditoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "dataHora", nullable = false)
 	private Timestamp dataHora;
+	
+	@Column(name = "acao", nullable = false)
 	private String acao;
+	
+	@Column(name = "detalheAdicionais", nullable = false)
 	private String detalheAdicionais;
 
 	public Long getId() {
