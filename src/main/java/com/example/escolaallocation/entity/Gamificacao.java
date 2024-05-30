@@ -59,20 +59,20 @@ public class Gamificacao {
 		this.desafiosMentais = desafiosMentais;
 	}
 
-	public String getRecompensaRontuacao() {
+	public String getRecompensaPontuacao() {
 		return recompensaPontuacao;
 	}
 
-	public void setRecompensaRontuacao(String recompensaRontuacao) {
-		this.recompensaPontuacao = recompensaRontuacao;
+	public void setRecompensaPontuacao(String recompensaPontuacao) {
+		this.recompensaPontuacao = recompensaPontuacao;
 	}
 
-	public String getMossoesTarefas() {
+	public String getMissoesTarefas() {
 		return missoesTarefas;
 	}
 
-	public void setMossoesTarefas(String mossoesTarefas) {
-		this.missoesTarefas = mossoesTarefas;
+	public void setMissoesTarefas(String missoesTarefas) {
+		this.missoesTarefas = missoesTarefas;
 	}
 
 	public String getRankingAmigavel() {
@@ -83,12 +83,12 @@ public class Gamificacao {
 		this.rankingAmigavel = rankingAmigavel;
 	}
 
-	public String getPersonalizaçãoAvatar() {
+	public String getPersonalizacaoAvatar() {
 		return personalizacaoAvatar;
 	}
 
-	public void setPersonalizaçãoAvatar(String personalizaçãoAvatar) {
-		this.personalizacaoAvatar = personalizaçãoAvatar;
+	public void setPersonalizacaoAvatar(String personalizacaoAvatar) {
+		this.personalizacaoAvatar = personalizacaoAvatar;
 	}
 
 	public String getCelebrarConquistas() {
@@ -102,8 +102,8 @@ public class Gamificacao {
 	@Override
 	public String toString() {
 		return "Gamificacao [id=" + id + ", nivelDeDesempenho=" + nivelDeDesempenho + ", desafiosMentais="
-				+ desafiosMentais + ", recompensaRontuacao=" + recompensaPontuacao + ", mossoesTarefas="
-				+ missoesTarefas + ", rankingAmigavel=" + rankingAmigavel + ", personalizaçãoAvatar="
+				+ desafiosMentais + ", recompensaPontuacao=" + recompensaPontuacao + ", missoesTarefas="
+				+ missoesTarefas + ", rankingAmigavel=" + rankingAmigavel + ", personalizacaoAvatar="
 				+ personalizacaoAvatar + ", celebrarConquistas=" + celebrarConquistas + "]";
 	}
 

@@ -1,10 +1,14 @@
 package com.example.escolaallocation.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,8 +27,16 @@ public class Professores {
 	@Column(name = "matricula", nullable = false)
 	private int matricula;
 	
-	@Column(name = "cpf", nullable = false, unique = true)
+	@Column(name = "cpf", nullable = false, unique = true, length = 11)
 	private String cpf;
+	
+	@ManyToOne
+	@JoinColumn(name = "departamentos_id", nullable = false)
+	private Departamentos departamentos  ;
+	
+	@ManyToOne
+	@JoinColumn(name = "contatos_id", nullable = false)
+	private List<Contatos>contatos;
 
 	public Long getId() {
 		return id;

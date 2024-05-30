@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +29,10 @@ public class Contatos {
 	@Column(name = "cep", nullable = false)
 	private int cep;
 
+	@OneToMany
+	@JoinColumn(name = "professores_id", nullable = false)
+	private Professores professores;
+	
 	public Long getId() {
 		return id;
 	}
