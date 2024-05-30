@@ -33,6 +33,14 @@ public class Contatos {
 	@JoinColumn(name = "professores_id", nullable = false)
 	private Professores professores;
 	
+	@OneToMany
+	@JoinColumn(name = "alunos_id", nullable = false)
+	private Alunos alunos;
+	
+	@OneToMany
+	@JoinColumn(name = "responsaveis_id", nullable = false)
+	private Responsaveis responsaveis;
+	
 	public Long getId() {
 		return id;
 	}

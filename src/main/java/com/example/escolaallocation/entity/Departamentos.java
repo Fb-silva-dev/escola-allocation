@@ -23,6 +23,10 @@ public class Departamentos {
 	@OneToMany
 	@JoinColumn(name = "professores_id", nullable = false)
 	private Professores professores;
+	
+	@OneToMany
+	@JoinColumn(name = "contatos_id", nullable = false)
+	private Contatos contatos;
 
 	public Long getId() {
 		return id;

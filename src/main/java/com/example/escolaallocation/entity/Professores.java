@@ -2,6 +2,9 @@ package com.example.escolaallocation.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +17,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "profesorres")
 public class Professores {
+	
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@Id
+	@Column(nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
@@ -30,12 +36,17 @@ public class Professores {
 	@Column(name = "cpf", nullable = false, unique = true, length = 11)
 	private String cpf;
 	
+	// ainda não se se vai ficar essa anotação
+	@JsonProperty(access = Access.WRITE_ONLY)
+	@Column(name = "department_id", nullable = false, unique = true)
+	private Long departmentos_id;
+	
 	@ManyToOne
-	@JoinColumn(name = "departamentos_id", nullable = false)
+	@JoinColumn(name = "departamentos_id",insertable = false, updatable = false, nullable = false)
 	private Departamentos departamentos  ;
 	
 	@ManyToOne
-	@JoinColumn(name = "contatos_id", nullable = false)
+	@JoinColumn(name = "contatos_id",insertable = false, updatable = false, nullable = false)
 	private List<Contatos>contatos;
 
 	public Long getId() {
