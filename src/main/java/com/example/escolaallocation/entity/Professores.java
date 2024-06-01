@@ -38,9 +38,46 @@ public class Professores {
 	
 	// ainda não se se vai ficar essa anotação
 	@JsonProperty(access = Access.WRITE_ONLY)
-	@Column(name = "department_id", nullable = false, unique = true)
+	@Column(name = "departmentos_id", nullable = false, unique = true)
 	private Long departmentos_id;
 	
+	// ainda não se se vai ficar essa anotação
+		@JsonProperty(access = Access.WRITE_ONLY)
+		@Column(name = "contatos_id", nullable = false, unique = true)
+		private Long contatos_id;
+	
+	public Long getDepartmentos_id() {
+			return departmentos_id;
+		}
+
+		public Long getContatos_id() {
+			return contatos_id;
+		}
+
+		public Departamentos getDepartamentos() {
+			return departamentos;
+		}
+
+		public List<Contatos> getContatos() {
+			return contatos;
+		}
+
+		public void setDepartmentos_id(Long departmentos_id) {
+			this.departmentos_id = departmentos_id;
+		}
+
+		public void setContatos_id(Long contatos_id) {
+			this.contatos_id = contatos_id;
+		}
+
+		public void setDepartamentos(Departamentos departamentos) {
+			this.departamentos = departamentos;
+		}
+
+		public void setContatos(List<Contatos> contatos) {
+			this.contatos = contatos;
+		}
+
 	@ManyToOne
 	@JoinColumn(name = "departamentos_id",insertable = false, updatable = false, nullable = false)
 	private Departamentos departamentos  ;
@@ -91,8 +128,9 @@ public class Professores {
 
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", name=" + name + ", sobrenome=" + sobrenome + ", matricula=" + matricula
-				+ ", cpf=" + cpf + "]";
+		return "Professores [id=" + id + ", name=" + name + ", sobrenome=" + sobrenome + ", matricula=" + matricula
+				+ ", cpf=" + cpf + ", departmentos_id=" + departmentos_id + ", contatos_id=" + contatos_id
+				+ ", departamentos=" + departamentos + ", contatos=" + contatos + "]";
 	}
 
 }

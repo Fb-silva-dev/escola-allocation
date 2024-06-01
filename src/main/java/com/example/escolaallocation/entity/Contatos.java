@@ -41,6 +41,30 @@ public class Contatos {
 	@JoinColumn(name = "responsaveis_id", nullable = false)
 	private Responsaveis responsaveis;
 	
+	public Professores getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(Professores professores) {
+		this.professores = professores;
+	}
+
+	public Alunos getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(Alunos alunos) {
+		this.alunos = alunos;
+	}
+
+	public Responsaveis getResponsaveis() {
+		return responsaveis;
+	}
+
+	public void setResponsaveis(Responsaveis responsaveis) {
+		this.responsaveis = responsaveis;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -83,8 +107,8 @@ public class Contatos {
 
 	@Override
 	public String toString() {
-		return "Contato [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
-				+ "]";
+		return "Contatos [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
+				+ ", professores=" + professores + ", alunos=" + alunos + ", responsaveis=" + responsaveis + "]";
 	}
 
 }
